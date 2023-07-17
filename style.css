@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --ff-heading: 'Staatliches', cursive;
+  --ff-main: 'Palanquin', sans-serif;
+
+  --color-bg-heading-primary: hsl(218, 17%, 62%);
+  --color-bg-heading-secundary: hsl(275, 18%, 79%);
+  --color-ff-main: hsl(274, 84%, 12%);
+  --color-ff-span: hsl(232, 17%, 35%);
+  --color-bg-span: #FEEAFA;
+}
+
+.page {
+  max-width: 38.4rem;
+
+  margin: 0 auto;
+}
+
+.page header {
+  text-align: center;
+  padding: 3.2rem 0;
+
+  background-color: var(--color-bg-heading-primary);
+}
+
+.page header h1 {
+  font-size: 40px;
+  font-weight: 400;
+  font-family: var(--ff-heading);
+
+  line-height: 3.4rem;
+  letter-spacing: 0.2rem;
+
+  margin-top: 3.2rem;
+  padding: .8rem 0;
+
+  color: white;
+  background-color: var(--color-bg-heading-secundary);
+}
+
+.page main {
+
+  padding: 1.4rem 3.2rem 6rem;
+
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.page main p {
+  text-align: center;
+  margin-bottom: 6rem;
+
+  color: var(--color-ff-main);
+  font-family: var(--ff-main);
+  line-height: 1.5rem;
+}
+
+.item {
+  position: relative;
+}
+
+.item + .item {
+  margin-top: 3.2rem;
+}
+
+.item img {
+  --startY: 15%;
+  animation: appear 1s ease-out backwards;
+}
+
+.item span {
+  font-family: var(--ff-heading);
+
+  border-radius: 2rem;
+  padding: 0 2.4rem;
+  
+  line-height: 3.4rem;
+  letter-spacing: 0.1rem;
+
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  background-color: var(--color-bg-span);
+  color: var(--color-ff-span);
+
+  --startY: -100%;
+  animation: appear 1s ease-out backwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0.1;
+    transform: translateY(var(--startY));
+  }
+}
